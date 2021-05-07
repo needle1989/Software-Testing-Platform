@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\components",
+    "\\src\\components\\booking",
+    "\\src\\components\\index",
+    "\\src\\components\\principalHome",
+    "\\src\\components\\studentHome",
+    "\\src\\router",
+    "\\src\\views"
+  ],
+  "SelectedNode": "\\src\\components\\booking\\borrows.vue",
+  "PreviewInSolutionExplorer": false
+}

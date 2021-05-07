@@ -1,0 +1,33 @@
+/*全局样式表*/
+html,body,#app{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.h1{
+		font-weight: bold;
+		color: #1b1b1b;
+		font-size: 15px;
+		font-family: "Microsoft Yahei", sans-serif;
+	}
+
+.formCon{
+		width: 320px;
+		height: 190px;
+		position: absolute;
+		top: 36%;
+		left: 36%;
+		padding: 25px;
+		border-radius: 5px;
+		text-align: center;
+		background-color: #fdffff;
+		
+	}
+.libtipin{
+		position: absolute;
+		width: 100%;
+		top: -100px;
+		left: 60px;
+		color: #1a1a1a;
+		font-size: 30px;
+	}
