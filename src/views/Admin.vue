@@ -10,9 +10,6 @@
 <!--            <div class="header-name">-->
 <!--                {{username}}-->
 <!--            </div>-->
-            <div class="out-button">
-                <el-button @click="logout" size="medium" round>  退出</el-button>
-            </div>
         </el-header>
         <!--        页面主体-->
         <el-container>
@@ -21,13 +18,21 @@
                 <el-menu router
                          background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
 				    <el-submenu index="1">
-				        <template slot="title">读者管理</template>
-						<el-menu-item index="/readerlist">获取读者列表</el-menu-item>
-						<el-menu-item index="/AdminChangeUserInfo">修改用户信息</el-menu-item>
-						<el-menu-item index="/AdminChangeUserPassword">修改用户密码</el-menu-item>
+				        <template slot="title">QUESTIONS</template>
+						<el-menu-item index="/Triangle">三角形类型</el-menu-item>
+						<el-menu-item index="/Triangle">销售管理系统</el-menu-item>
+						<el-menu-item index="/Triangle">电脑销售系统</el-menu-item>
+						<el-menu-item index="/Triangle">电商平台系统</el-menu-item>
+						<el-menu-item index="/Triangle">项目部署</el-menu-item>
+						<el-menu-item index="/Triangle">电信收费问题</el-menu-item>
+						<el-menu-item index="/Triangle">C/S系统</el-menu-item>
+						<el-menu-item index="/Triangle">万年历问题</el-menu-item>
+						<el-menu-item index="/readerlist">测试</el-menu-item>
+						<el-menu-item index="/AdminChangeUserInfo">测试</el-menu-item>
+						<el-menu-item index="/AdminChangeUserPassword">测试</el-menu-item>
 				    </el-submenu>
 				    <el-submenu index="2">
-				        <template slot="title">图书管理</template>
+				        <template slot="title">测试</template>
 						<el-menu-item index="/BookReviewAdmin">浏览书籍推荐</el-menu-item>
 						<el-menu-item index="/AllBook">获取全部书籍</el-menu-item>
 						<el-menu-item index="/SearchBox">搜索书籍</el-menu-item>
@@ -88,12 +93,6 @@
                     }).catch(function (response) {
                         console.log(response);
                     });
-            },
-            //退出按钮
-            logout()
-            {
-                window.sessionStorage.clear();
-                this.$router.push("index")
             },
         }
     };

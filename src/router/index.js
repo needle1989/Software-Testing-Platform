@@ -10,6 +10,8 @@ import StudentRegister from '../components/index/StudentRegister'
 import Admin from '../views/Admin'
 import User from '../views/User'
 
+import Triangle from '../components/adminHome/Triangle'
+
 import AdminBookReview from '../components/adminHome/AdminBookReview'
 import AdminChangeIf from '../components/adminHome/AdminChangeIf'
 import AdminChangePass from '../components/adminHome/AdminChangePass'
@@ -40,7 +42,6 @@ import AllBook from '../components/searchbook/AllBook'
 //room页面和他的组件
 import RoomList from '../components/room/RoomList'
 import RoomReserve from '../components/room/RoomReserve'
-
 import information from '../components/commonForUser/information'
 import AllBook1 from '../components/commonForUser/AllBook1'
 import RoomList1 from '../components/commonForUser/RoomList1'
@@ -52,25 +53,16 @@ Vue.use(VueRouter)
 const routes = [
     {
         path: '/',
-        component: Index
+        component: Admin,
+		redirect: '/AllBook'
     },
-    {
-        path: '/index',
-        component: Index,
-        //当访问index,自动重定向到welcome页面
-        redirect: '/login',
-        //index页面的一些子路由
-        children: [
-            { path: '/login', component: Login },
-            { path: '/studentRegister', component: StudentRegister },
-            ]
-    },
+
 	{
-	    path: '/Admin',
+	    path: '/admin',
 	    component: Admin,
-		redirect: '/AdminInfo',
-	    // redirect: '/login',
+		redirect: '/AllBook',
 	    children: [
+			{ path: '/Triangle', component: Triangle },
 	        { path: '/AdminChangeIf', component: AdminChangeIf },
 	        { path: '/AdminChangePass', component: AdminChangePass },
 			{ path: '/AdminChangeUserInfo', component: AdminChangeUserInfo },
@@ -120,23 +112,5 @@ const router = new VueRouter({
     routes
 });
 
-// 挂载路由导航守卫
-router.beforeEach((to, from, next) =>
-{
-    // to:要访问的路径
-    // from从哪个路径来的
-    // next代表放行
-    if (to.path === '/login' || to.path === '/studentRegister' || to.path === '/welcome' || to.path === '/returns' || to.path === '/borrows')
-    {
-        return next();
-    }
-    else
-    {
-//    获取token
-        let token = window.sessionStorage.getItem("token");
-        if (!token) return next("/login");
-        else return next();
-    }
-});
 
 export default router

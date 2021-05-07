@@ -11,7 +11,7 @@
 <!--                {{username}}-->
 <!--            </div>-->
             <div class="out-button">
-                <el-button @click="logout" size="medium"round>  退出</el-button>
+                <el-button @click="logout" size="medium" round>  退出</el-button>
             </div>
         </el-header>
         <!--        页面主体-->
@@ -27,9 +27,7 @@
 						<el-menu-item index="/AdminChangePass1">修改密码</el-menu-item>
 					</el-submenu>
                     <el-submenu index="2">
-                        <template slot="title">
-                            图书查询
-                        </template>
+                        <template slot="title">图书查询</template>
                         <el-menu-item index="/BookReview">书籍推荐阅览</el-menu-item>
                         <el-menu-item index="/SearchBox1">搜索书籍</el-menu-item>
                         <el-menu-item index="/AllBook1">浏览全部书籍</el-menu-item>

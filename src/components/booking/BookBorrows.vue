@@ -65,12 +65,6 @@
                             this.$message.info("借阅失败！");
                         else
                             this.$message.info("借阅成功！");
-                       // this.$message.info(book_id);
-                        //this.$message.info(result.data.reader_id);
-                       // this.$message.info(result.data.time_slot_id);
-                        //this.$message.info(result.data.renew);
-                        //this.$message.info(result.data.state);
-                        //this.$message.info(result.data.return_Time);
                     }
                 });
             }
