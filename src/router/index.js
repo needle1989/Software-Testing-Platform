@@ -12,6 +12,11 @@ import User from '../views/User'
 
 import Triangle from '../components/adminHome/Triangle'
 import SaleManagement from '../components/adminHome/SaleManagement'
+import ComputerSale from '../components/adminHome/ComputerSale'
+import EBusinessPlat from '../components/adminHome/EBusinessPlat'
+import ElecCharge from '../components/adminHome/ElecCharge'
+import CSSystem from '../components/adminHome/CSSystem'
+import Calendar from '../components/adminHome/Calendar'
 
 import AdminBookReview from '../components/adminHome/AdminBookReview'
 import AdminChangeIf from '../components/adminHome/AdminChangeIf'
@@ -65,6 +70,12 @@ const routes = [
 	    children: [
 			{ path: '/Triangle', component: Triangle },
 			{ path: '/SaleManagement', component: SaleManagement },
+			{ path: '/ComputerSale', component: ComputerSale },
+			{ path: '/EBusinessPlat', component: EBusinessPlat },
+			{ path: '/ElecCharge', component: ElecCharge },
+			{ path: '/CSSystem', component: CSSystem },
+			{ path: '/Calendar', component: Calendar },
+
 	        { path: '/AdminChangeIf', component: AdminChangeIf },
 	        { path: '/AdminChangePass', component: AdminChangePass },
 			{ path: '/AdminChangeUserInfo', component: AdminChangeUserInfo },

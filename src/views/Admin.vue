@@ -21,12 +21,12 @@
 				        <template slot="title">QUESTIONS</template>
 						<el-menu-item index="/Triangle">三角形类型</el-menu-item>
 						<el-menu-item index="/SaleManagement">销售管理系统</el-menu-item>
-						<el-menu-item index="/Triangle">电脑销售系统</el-menu-item>
-						<el-menu-item index="/Triangle">电商平台系统</el-menu-item>
+						<el-menu-item index="/ComputerSale">电脑销售系统</el-menu-item>
+						<el-menu-item index="/EBusinessPlat">电商平台系统</el-menu-item>
 						<el-menu-item index="/Triangle">项目部署</el-menu-item>
-						<el-menu-item index="/Triangle">电信收费问题</el-menu-item>
-						<el-menu-item index="/Triangle">C/S系统</el-menu-item>
-						<el-menu-item index="/Triangle">万年历问题</el-menu-item>
+						<el-menu-item index="/ElecCharge">电信收费问题</el-menu-item>
+						<el-menu-item index="/CSSystem">C/S系统</el-menu-item>
+						<el-menu-item index="/Calendar">万年历问题</el-menu-item>
 						<el-menu-item index="/readerlist">测试</el-menu-item>
 						<el-menu-item index="/AdminChangeUserInfo">测试</el-menu-item>
 						<el-menu-item index="/AdminChangeUserPassword">测试</el-menu-item>
