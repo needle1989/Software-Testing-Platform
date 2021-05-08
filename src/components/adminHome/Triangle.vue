@@ -80,10 +80,9 @@ export default {
         let Token = window.sessionStorage.getItem('token');
         let msg = "";
         let status = 200;
-        let ids = this.ruleForm.id;
-        let names = this.ruleForm.name;
-        let contacts = this.ruleForm.contact;
-        let genders = "" + this.ruleForm.gender;
+        let edgeA = this.ruleForm.edgeA;
+        let edgeB = this.ruleForm.edgeB;
+        let degeC = this.ruleForm.edgeC;
         names = encodeURI(encodeURI(names));
         genders = encodeURI(encodeURI(genders));
         let result = await this.$http.put('/apip/api/adminop/modreaderinfo?id=' + ids + '&name=' + names + '&contact=' + contacts + '&gender=' + genders,
