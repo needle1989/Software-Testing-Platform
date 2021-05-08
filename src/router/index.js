@@ -17,6 +17,7 @@ import EBusinessPlat from '../components/adminHome/EBusinessPlat'
 import ElecCharge from '../components/adminHome/ElecCharge'
 import CSSystem from '../components/adminHome/CSSystem'
 import Calendar from '../components/adminHome/Calendar'
+import Project from '../components/adminHome/Project'
 
 import AdminBookReview from '../components/adminHome/AdminBookReview'
 import AdminChangeIf from '../components/adminHome/AdminChangeIf'
@@ -60,13 +61,13 @@ const routes = [
     {
         path: '/',
         component: Admin,
-		redirect: '/AllBook'
+		redirect: '/Triangle'
     },
 
 	{
 	    path: '/admin',
 	    component: Admin,
-		redirect: '/AllBook',
+		redirect: '/Triangle',
 	    children: [
 			{ path: '/Triangle', component: Triangle },
 			{ path: '/SaleManagement', component: SaleManagement },
@@ -75,6 +76,7 @@ const routes = [
 			{ path: '/ElecCharge', component: ElecCharge },
 			{ path: '/CSSystem', component: CSSystem },
 			{ path: '/Calendar', component: Calendar },
+			{ path: '/Project', component: Project },
 
 	        { path: '/AdminChangeIf', component: AdminChangeIf },
 	        { path: '/AdminChangePass', component: AdminChangePass },

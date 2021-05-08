@@ -19,11 +19,11 @@
                          background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
 				    <el-submenu index="1">
 				        <template slot="title">QUESTIONS</template>
-						<el-menu-item index="/Triangle">三角形类型</el-menu-item>
+						<el-menu-item index="/Triangle">三角形问题</el-menu-item>
 						<el-menu-item index="/SaleManagement">销售管理系统</el-menu-item>
 						<el-menu-item index="/ComputerSale">电脑销售系统</el-menu-item>
 						<el-menu-item index="/EBusinessPlat">电商平台系统</el-menu-item>
-						<el-menu-item index="/Triangle">项目部署</el-menu-item>
+						<el-menu-item index="/Project">项目部署</el-menu-item>
 						<el-menu-item index="/ElecCharge">电信收费问题</el-menu-item>
 						<el-menu-item index="/CSSystem">C/S系统</el-menu-item>
 						<el-menu-item index="/Calendar">万年历问题</el-menu-item>
@@ -41,11 +41,11 @@
 						<el-menu-item index="/search">搜索借阅记录</el-menu-item>
 				    </el-submenu>
 					<el-submenu index="3">
-					    <template slot="title">自习室管理</template>
+					    <template slot="title">测试</template>
 					    <el-menu-item index="/RoomList">获取自习室信息</el-menu-item>
 					</el-submenu>
 					<el-submenu index="4">
-					    <template slot="title">管理员内务</template>
+					    <template slot="title">测试</template>
 						<el-menu-item index="/adminlist">获取管理员列表</el-menu-item>
 						<el-menu-item index="/AdminChangeIf">修改管理员信息</el-menu-item>
 						<el-menu-item index="/AdminChangePass">修改管理员密码</el-menu-item>
