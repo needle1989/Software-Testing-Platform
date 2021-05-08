@@ -11,6 +11,7 @@ import Admin from '../views/Admin'
 import User from '../views/User'
 
 import Triangle from '../components/adminHome/Triangle'
+import SaleManagement from '../components/adminHome/SaleManagement'
 
 import AdminBookReview from '../components/adminHome/AdminBookReview'
 import AdminChangeIf from '../components/adminHome/AdminChangeIf'
@@ -63,6 +64,7 @@ const routes = [
 		redirect: '/AllBook',
 	    children: [
 			{ path: '/Triangle', component: Triangle },
+			{ path: '/SaleManagement', component: SaleManagement },
 	        { path: '/AdminChangeIf', component: AdminChangeIf },
 	        { path: '/AdminChangePass', component: AdminChangePass },
 			{ path: '/AdminChangeUserInfo', component: AdminChangeUserInfo },

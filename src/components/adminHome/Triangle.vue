@@ -9,24 +9,24 @@
              ref="ruleForm"
              label-width="100px"
              class="demo-ruleForm">
-      <el-form-item label="A"
-                    prop="id">
-        <el-input v-model.number="ruleForm.id"
+      <el-form-item label="Edge A"
+                    prop="edgeA">
+        <el-input v-model.number="ruleForm.edgeA"
                   style="width:300px;"></el-input>
       </el-form-item>
-      <el-form-item label="B"
-                    prop="contact">
-        <el-input v-model.number="ruleForm.contact"
+      <el-form-item label="Edge B"
+                    prop="edgeB">
+        <el-input v-model.number="ruleForm.edgeB"
                   style="width:300px;"></el-input>
       </el-form-item>
-      <el-form-item label="C"
-                    prop="contact">
-        <el-input v-model.number="ruleForm.contact"
+      <el-form-item label="Edge C"
+                    prop="edgeC">
+        <el-input v-model.number="ruleForm.edgeC"
                   style="width:300px;"></el-input>
       </el-form-item>
       <el-form-item>
         <el-button type="primary"
-                           @click="submitForm('ruleForm')" style="width:100%;">提交</el-button>
+                           @click="submitForm('ruleForm')" style="width:100%;">SUBMIT</el-button>
       </el-form-item>
     </el-form></section>
     <div class="thetop"><h1>预设测试用例</h1></div>
@@ -38,18 +38,14 @@ export default {
   data () {
     var checknum = (rule, value, callback) => {
       if (!value) {
-        return callback(new Error('联系方式不能为空'))
+        return callback(new Error('Number can not be null'))
       }
       setTimeout(() => {
         if (!Number.isInteger(value)) {
-          callback(new Error('请输入数字值'))
+          callback(new Error('Please enter a number'))
         } else {
-          if (value.toString().length !== 11) {
-            callback(new Error('必须为11位数'))
-          } else {
             callback()
           }
-        }
       }, 1000)
     }
     var check = (rule, value, callback) => {
@@ -59,22 +55,18 @@ export default {
     }
     return {
       ruleForm: {
-        id: '',
-        gender: '',
-        name: '',
-        contact: ''
+        edgeA: '',
+        edgeB: '',
+        edgeC: '',
       },
       rules: {
-        id: [
-          { validator: check, trigger: 'blur' }
+        edgeA: [
+          { validator: checknum, trigger: 'blur' }
         ],
-        gender: [
-          { validator: check, trigger: 'blur' }
+        edgeB: [
+          { validator: checknum, trigger: 'blur' }
         ],
-        name: [
-          { validator: check, trigger: 'blur' }
-        ],
-        contact: [
+        edgeC: [
           { validator: checknum, trigger: 'blur' }
         ]
 

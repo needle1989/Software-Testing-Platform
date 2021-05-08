@@ -20,7 +20,7 @@
 				    <el-submenu index="1">
 				        <template slot="title">QUESTIONS</template>
 						<el-menu-item index="/Triangle">三角形类型</el-menu-item>
-						<el-menu-item index="/Triangle">销售管理系统</el-menu-item>
+						<el-menu-item index="/SaleManagement">销售管理系统</el-menu-item>
 						<el-menu-item index="/Triangle">电脑销售系统</el-menu-item>
 						<el-menu-item index="/Triangle">电商平台系统</el-menu-item>
 						<el-menu-item index="/Triangle">项目部署</el-menu-item>
