@@ -158,7 +158,7 @@
         </div>
     </div>  
 </template>
-<style type='text/css'>
+<style type='text/css' scoped>
         html {
             overflow-x: initial !important;
         }
