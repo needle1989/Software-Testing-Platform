@@ -18,7 +18,7 @@ Vue.prototype.$api = api
 //全局axios配置
 import axios from 'axios'
 Vue.prototype.$http = axios
-axios.defaults.baseURL = 'http://localhost:10086'
+axios.defaults.baseURL = '/'
 
 //拦截器 发送请求前,会发送一个token
 axios.interceptors.request.use(config =>

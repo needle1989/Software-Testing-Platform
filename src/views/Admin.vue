@@ -27,9 +27,6 @@
 						<el-menu-item index="/ElecCharge">电信收费问题</el-menu-item>
 						<el-menu-item index="/CSSystem">C/S系统</el-menu-item>
 						<el-menu-item index="/Calendar">万年历问题</el-menu-item>
-						<el-menu-item index="/readerlist">测试</el-menu-item>
-						<el-menu-item index="/AdminChangeUserInfo">测试</el-menu-item>
-						<el-menu-item index="/AdminChangeUserPassword">测试</el-menu-item>
 				    </el-submenu>
 				    <el-submenu index="2">
 				        <template slot="title">测试</template>
@@ -40,18 +37,6 @@
 						<el-menu-item index="/BookReturns">归还书籍</el-menu-item>
 						<el-menu-item index="/search">搜索借阅记录</el-menu-item>
 				    </el-submenu>
-					<el-submenu index="3">
-					    <template slot="title">测试</template>
-					    <el-menu-item index="/RoomList">获取自习室信息</el-menu-item>
-					</el-submenu>
-					<el-submenu index="4">
-					    <template slot="title">测试</template>
-						<el-menu-item index="/adminlist">获取管理员列表</el-menu-item>
-						<el-menu-item index="/AdminChangeIf">修改管理员信息</el-menu-item>
-						<el-menu-item index="/AdminChangePass">修改管理员密码</el-menu-item>
-						<el-menu-item index="/AdminRegister">管理员注册</el-menu-item>
-						<el-menu-item index="/AdminInfo">使用者信息</el-menu-item>
-					</el-submenu>
                 </el-menu>
             </el-aside>
             <!--            右侧内容主体-->

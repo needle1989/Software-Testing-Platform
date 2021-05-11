@@ -67,28 +67,18 @@
     <div style="padding-left: 50px; padding-top: 30px">
       result:<br />{{ result }}
     </div>
-    <div style="padding-left: 50px">
-      <el-table
-        :key="itemkey"
-        :data="resultTable"
-        style="width: 62.5rem"
-        border
-        :stripe="true"
-      >
-        <el-table-column prop="host" label="主机"> </el-table-column>
-        <el-table-column prop="monitor" label="显示器"> </el-table-column>
-        <el-table-column prop="io" label="外设"> </el-table-column>
-        <el-table-column prop="expectSales" label="预期销售额">
-        </el-table-column>
-        <el-table-column prop="actualSales" label="实际销售额">
-        </el-table-column>
-        <el-table-column prop="expectCommission" label="预期佣金">
-        </el-table-column>
-        <el-table-column prop="actualCommission" label="实际佣金">
-        </el-table-column>
-        <el-table-column prop="ifCorrect" label="是否正确"> </el-table-column>
-      </el-table>
-    </div>
+    <div>
+        <el-table :data="testResult">
+          <el-table-column label="主机数" align="center" prop="host"/>
+          <el-table-column label="显示器数" align="center" prop="monitor"/>
+          <el-table-column label="外设数" align="center" prop="io"/>
+          <el-table-column label="预期销售量" align="center" prop="expectSales"/>
+          <el-table-column label="实际销售量" align="center" prop="actualSales"/>
+          <el-table-column label="预期薪水" align="center" prop="expectCommission"/>
+          <el-table-column label="实际薪水" align="center" prop="actualCommission"/>
+          <el-table-column label="是否正确" align="center" prop="ifCorrect"/>
+        </el-table>
+      </div>
   </div>
 </template>
 <script>
@@ -104,13 +94,6 @@ export default {
           callback();
         }
       }, 1000);
-    };
-    var check = (rule, value, callback) => {
-      if (value === "") {
-        callback(new Error("请输入内容"));
-      } else {
-        callback();
-      }
     };
     return {
       itemkey: "",
@@ -139,10 +122,11 @@ export default {
       sales: "",
       commission: "",
       result: "",
+      testResult:[]
     };
   },
   methods: {
-    submitForm() {
+    submit() {
       //console.log(this.ruleForm);
       let _this = this;
       if (
@@ -164,29 +148,29 @@ export default {
           console.log(error);
         });
     },
+    submitForm: function () {
+      this.$http.post('http://localhost:10086/api/questionThree/manualtest',this.ruleForm)
+      .then((res)=>{
+        console.log(res.data.commission)
+        this.commission = res.data.commission
+        this.message = res.data.message
+        this.sales = res.data.sales
+        console.log(this.commission)
+      })
+    },
     submitOption() {
       let _this = this;
       console.log(this.itemkey);
       if (this.value == "选项1") {
-        _this.$http
-          .post("/api/questionThree/boundaryInput")
-          .then(function (response) {
-            var data = JSON.stringify(response.data.data);
-            console.log(data);
-            window.sessionStorage.setItem("table", data);
-            this.$forceUpdate();
-            _this.itemkey = !_this.itemkey;
-          });
+        this.$http.post('http://localhost:10086/api/questionThree/boundaryInput')
+          .then((res)=>{
+            this.testResult = res.data.data
+          })
       } else {
-        _this.$http
-          .post("/api/questionThree/boundaryOutput")
-          .then(function (response) {
-            var data = JSON.stringify(response.data.data);
-            console.log(data);
-            window.sessionStorage.setItem("table", data);
-            this.$forceUpdate();
-            _this.itemkey = !_this.itemkey;
-          });
+        this.$http.post('http://localhost:10086/api/questionThree/boundaryOutput')
+          .then((res)=>{
+            this.testResult = res.data.data
+          })
       }
     },
     resetForm(formName) {

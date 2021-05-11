@@ -31,6 +31,41 @@
     </el-form></section>
     <div class="thetop"><h1>预设测试用例</h1></div>
     <div class="tableTitle"></div>
+    <el-row :gutter="20">
+      <el-col :span="6">
+        <div style="padding-left: 50px; padding-top: 20px">
+          <el-select v-model="value" placeholder="请选择">
+            <el-option
+              v-for="item in options"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value"
+            >
+            </el-option>
+          </el-select>
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div style="padding-top: 20px">
+          <el-button type="primary" @click="submitOption()" style="width: 100px"
+            >SUBMIT</el-button
+          >
+        </div>
+      </el-col>
+    </el-row>
+    <div style="padding-left: 50px; padding-top: 30px">
+      result:<br />{{ result }}
+    </div>
+    <div>
+        <el-table :data="testResult">
+          <el-table-column label="Edge A" align="center" prop="side1"/>
+          <el-table-column label="Edge A" align="center" prop="side2"/>
+          <el-table-column label="Edge A" align="center" prop="side3"/>
+          <el-table-column label="Expected Output" align="center" prop="expectType"/>
+          <el-table-column label="Actual Output" align="center" prop="actualType"/>
+          <el-table-column label="Correctness" align="center" prop="ifCorrect"/>
+        </el-table>
+      </div>
   </div>
 </template>
 <script>
@@ -59,6 +94,16 @@ export default {
         edgeB: '',
         edgeC: '',
       },
+      options: [
+        {
+          value: "选项1",
+          label: "根据输入划分边界值",
+        },
+        {
+          value: "选项2",
+          label: "根据输出划分边界值",
+        },
+      ],
       rules: {
         edgeA: [
           { validator: checknum, trigger: 'blur' }
@@ -109,7 +154,9 @@ export default {
     },
     resetForm (formName) {
       this.$refs[formName].resetFields()
-    }
+    },
+    mounted() {
+  }
   }
 }
 </script>
