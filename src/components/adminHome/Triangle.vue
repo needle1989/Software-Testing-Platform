@@ -53,9 +53,6 @@
         </div>
       </el-col>
     </el-row>
-    <div style="padding-left: 50px; padding-top: 30px">
-      result:<br />{{ result }}
-    </div>
     <div>
         <el-table :data="testResult">
           <el-table-column label="Edge A" align="center" prop="side1"/>
@@ -89,6 +86,7 @@ export default {
       } else { callback() }
     }
     return {
+      itemkey: "",
       ruleForm: {
         edgeA: '',
         edgeB: '',
@@ -97,13 +95,14 @@ export default {
       options: [
         {
           value: "选项1",
-          label: "根据输入划分边界值",
+          label: "边界类",
         },
         {
           value: "选项2",
-          label: "根据输出划分边界值",
+          label: "等价类",
         },
       ],
+      value: "",
       rules: {
         edgeA: [
           { validator: checknum, trigger: 'blur' }
@@ -115,7 +114,8 @@ export default {
           { validator: checknum, trigger: 'blur' }
         ]
 
-      }
+      },
+      testResult:[]
     }
   },
   methods: {
@@ -152,11 +152,24 @@ export default {
         }
       });
     },
+    submitOption() {
+      let _this = this;
+      console.log(this.itemkey);
+      if (this.value == "选项1") {
+        this.$http.post('http://localhost:10086/api/questionOne/boundary')
+          .then((res)=>{
+            this.testResult = res.data.data
+          })
+      } else {
+        this.$http.post('http://localhost:10086/api/questionOne/equivalent')
+          .then((res)=>{
+            this.testResult = res.data.data
+          })
+      }
+    },
     resetForm (formName) {
       this.$refs[formName].resetFields()
-    },
-    mounted() {
-  }
+    }
   }
 }
 </script>
