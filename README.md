@@ -1,9 +1,7 @@
 # Software testing frontend
 
-该项目是用vue框架开发的单页面应用项目。
+Vue project for software testing project
 
-**技术栈**
+**Tech Stack**
 
-@vue/cli 4.3.1+ vue-router + axios + vuex + Element UI 
-
-123
+@vue/cli + vue-router + axios + vuex + Element UI 
