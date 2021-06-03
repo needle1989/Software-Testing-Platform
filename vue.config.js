@@ -60,7 +60,7 @@ module.exports = {
         // proxy: null, // 设置代理
 		    proxy: { //配置代理，解决跨域请求后台数据的问题
 		      '/apip': {
-		        target: 'http://localhost:1006', //后台接口
+		        target: 'http://localhost:10086', //后台接口
 		        ws: true, //是否跨域
 		        changeOrigin: true,
 		        pathRewrite: {

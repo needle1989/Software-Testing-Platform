@@ -27,6 +27,7 @@
 						<el-menu-item index="/ElecCharge">电信收费问题</el-menu-item>
 						<el-menu-item index="/CSSystem">C/S系统</el-menu-item>
 						<el-menu-item index="/Calendar">万年历问题</el-menu-item>
+                        <el-menu-item index="/Test">测试</el-menu-item>
 				    </el-submenu>
 				    <el-submenu index="2">
 				        <template slot="title">测试</template>

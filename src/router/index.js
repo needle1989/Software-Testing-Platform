@@ -18,6 +18,7 @@ import ElecCharge from '../components/adminHome/ElecCharge'
 import CSSystem from '../components/adminHome/CSSystem'
 import Calendar from '../components/adminHome/Calendar'
 import Project from '../components/adminHome/Project'
+import Test from '../components/adminHome/Test'
 
 import AdminBookReview from '../components/adminHome/AdminBookReview'
 import AdminChangeIf from '../components/adminHome/AdminChangeIf'
@@ -77,6 +78,7 @@ const routes = [
 			{ path: '/CSSystem', component: CSSystem },
 			{ path: '/Calendar', component: Calendar },
 			{ path: '/Project', component: Project },
+			{ path: '/Test', component: Test },
 
 	        { path: '/AdminChangeIf', component: AdminChangeIf },
 	        { path: '/AdminChangePass', component: AdminChangePass },
